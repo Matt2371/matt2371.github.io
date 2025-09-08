@@ -85,3 +85,74 @@ body {
 .lightbox-backdrop { position: fixed; inset: 0; background: rgba(0,0,0,0.65); display: none; align-items: center; justify-content: center; z-index: 9999; }
 .lightbox-backdrop.show { display: flex; }
 .lightbox-img { max-width: 92vw; max-height: 88vh; border-radius: 12px; box-shadow: 0 10px 30px rgba(0,0,0,0.6); }
+
+
+/* === Entry cards: smaller thumbnails, image left / text right === */
+:root {
+  /* tweak these two numbers to taste */
+  --thumb-w: 220px;   /* desktop thumbnail width */
+  --thumb-h: 124px;   /* desktop thumbnail height */
+}
+
+/* ensure strict list layout */
+.list { display: flex; flex-direction: column; gap: 18px; }
+
+/* stack on mobile; split into two columns on desktop */
+.item { display: grid; gap: 14px; grid-template-columns: 1fr; align-items: start; }
+@media (min-width: 760px) {
+  .item { grid-template-columns: var(--thumb-w) 1fr; }
+}
+
+/* fixed-size thumbnail, cover-cropped to avoid squish */
+.item img.thumb {
+  width: 100%;
+  height: var(--thumb-h);
+  object-fit: cover;
+  border-radius: 12px;
+  margin: 0;
+}
+
+/* slightly tighter cards + compact text */
+.card { padding: 16px; }
+@media (min-width: 720px) { .card { padding: 18px; } }
+.item h3 { font-size: 18px; margin-bottom: 6px; }
+.item p { font-size: 15px; }
+
+
+/* === Mobile dropdown nav === */
+.nav { position: relative; }               /* anchor for absolute dropdown */
+.nav-toggle {
+  display: none;
+  background: var(--card);
+  border: 1px solid transparent;
+  color: var(--text);
+  padding: 8px 12px;
+  border-radius: 12px;
+  cursor: pointer;
+}
+.mobile-menu {
+  display: none;
+  position: absolute;
+  top: 100%; left: 0; right: 0;
+  background: var(--bg-soft);
+  border-bottom-left-radius: 12px;
+  border-bottom-right-radius: 12px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.25);
+  padding: 8px 12px;
+  z-index: 100;
+}
+.mobile-menu a {
+  display: block;
+  padding: 12px 8px;
+  color: var(--text);
+  text-decoration: none;
+  border-radius: 10px;
+}
+.mobile-menu a:hover { background: var(--card); }
+
+/* Show hamburger and dropdown on small screens; hide desktop links */
+@media (max-width: 759px) {
+  .nav-links { display: none; }
+  .nav-toggle { display: inline-flex; align-items: center; justify-content: center; }
+  .mobile-menu.show { display: block; }
+}

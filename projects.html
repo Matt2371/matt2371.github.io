@@ -9,18 +9,31 @@
   </head>
   <body data-page="projects">
     <header class="site-header">
-      <div class="container nav">
+    <div class="container nav">
         <div class="nav-left">
-          <a class="brand" href="/" data-site-name>Matthew Chen</a>
-          <div class="nav-icons" data-social></div>
+        <a class="brand" href="/" data-site-name>Matthew Chen</a>
+        <div class="nav-icons" data-social></div>
         </div>
+
+        <!-- Desktop links -->
         <nav class="nav-links">
-          <a href="/">Home</a>
-          <a href="/research.html">Research</a>
-          <a href="/projects.html">Projects</a>
-          <a href="/notes.html">Notes</a>
+        <a href="/">Home</a>
+        <a href="/research.html">Research</a>
+        <a href="/projects.html">Projects</a>
+        <a href="/notes.html">Notes</a>
         </nav>
-      </div>
+
+        <!-- Mobile toggle button -->
+        <button class="nav-toggle" aria-label="Menu" aria-expanded="false" aria-controls="mobileMenu">☰</button>
+
+        <!-- Mobile dropdown -->
+        <div id="mobileMenu" class="mobile-menu">
+        <a href="/">Home</a>
+        <a href="/research.html">Research</a>
+        <a href="/projects.html">Projects</a>
+        <a href="/notes.html">Notes</a>
+        </div>
+    </div>
     </header>
 
     <main class="container">
@@ -34,7 +47,7 @@
     </main>
 
     <footer class="footer">
-      <div class="container">© <span data-site-name>Matthew Chen</span></div>
+        <div class="container">Built with GitHub Pages</div>
     </footer>
 
     <div id="lightbox" class="lightbox-backdrop"><img id="lightboxImg" class="lightbox-img" alt="preview" /></div>

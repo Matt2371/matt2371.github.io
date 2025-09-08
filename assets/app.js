@@ -99,3 +99,27 @@ if (page === 'notes') {
   if (overview) overview.textContent = NOTES.overview;
   renderList('[data-list]', NOTES, 'notes');
 }
+
+// Mobile nav toggle
+const navToggle = document.querySelector('.nav-toggle');
+const mobileMenu = document.querySelector('#mobileMenu');
+if (navToggle && mobileMenu) {
+  navToggle.addEventListener('click', (e) => {
+    e.stopPropagation();
+    const open = mobileMenu.classList.toggle('show');
+    navToggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+  });
+  // Close when clicking a link or outside
+  mobileMenu.addEventListener('click', (e) => {
+    if (e.target.matches('a')) {
+      mobileMenu.classList.remove('show');
+      navToggle.setAttribute('aria-expanded', 'false');
+    }
+  });
+  document.addEventListener('click', (e) => {
+    if (!mobileMenu.contains(e.target) && e.target !== navToggle) {
+      mobileMenu.classList.remove('show');
+      navToggle.setAttribute('aria-expanded', 'false');
+    }
+  });
+}
