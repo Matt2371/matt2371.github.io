@@ -6,8 +6,9 @@ export const SITE = {
   name: "Matthew Chen",
   role: "PhD Student",
   location: "UC Davis", // not shown on Home per request
+  //email: "mattc2371@gmail.com", // optional — add your email if you'd like an email icon
   social: [
-    { label: "Email", url: "https://mail.google.com/mail/?view=cm&fs=1&to=you@example.com" },
+    { label: "Email", url: "mailto:mattc2371@gmail.com" },
     { label: "GitHub", url: "https://github.com/Matt2371" },
     { label: "LinkedIn", url: "https://www.linkedin.com/in/chenmatthew37/" } // replace with your profile or remove
   ],
