@@ -113,15 +113,18 @@ body {
 .actions { display: flex; gap: 12px; flex-wrap: wrap; justify-content: center; margin-top: 6px; }
 
 /* ---------- Sections & cards ---------- */
-/* Section layout with consistent vertical spacing */
+/* Section layout with generous desktop spacing */
 .section {
   padding: 48px 0;
   display: flex;
   flex-direction: column;
-  gap: 36px;           /* increase/decrease to taste */
+  gap: 32px;             /* phones */
 }
 @media (min-width: 760px) {
-  .section { gap: 44px; }
+  .section { gap: 56px; } /* tablets / small laptops */
+}
+@media (min-width: 1200px) {
+  .section { gap: 72px; } /* big desktops */
 }
 .card {
   background: var(--card); backdrop-filter: blur(var(--blur));
