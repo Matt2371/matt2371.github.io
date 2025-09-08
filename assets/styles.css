@@ -113,7 +113,16 @@ body {
 .actions { display: flex; gap: 12px; flex-wrap: wrap; justify-content: center; margin-top: 6px; }
 
 /* ---------- Sections & cards ---------- */
-.section { padding: 48px 0; }
+/* Section layout with consistent vertical spacing */
+.section {
+  padding: 48px 0;
+  display: flex;
+  flex-direction: column;
+  gap: 36px;           /* increase/decrease to taste */
+}
+@media (min-width: 760px) {
+  .section { gap: 44px; }
+}
 .card {
   background: var(--card); backdrop-filter: blur(var(--blur));
   border-radius: var(--radius); padding: 18px;
@@ -121,14 +130,6 @@ body {
   overflow: hidden; animation: floatIn 700ms ease both;
 }
 @media (min-width: 720px) { .card { padding: 22px; } }
-
-/* Extra space between the overview card and the entries list */
-.section .card + .list,
-.section .card + [data-list] { margin-top: 28px; }
-@media (min-width: 760px) {
-  .section .card + .list,
-  .section .card + [data-list] { margin-top: 36px; }
-}
 
 /* ---------- Entries: list + card content layout ---------- */
 /* One card per row */
