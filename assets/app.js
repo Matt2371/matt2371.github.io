@@ -28,40 +28,20 @@ function buildSocialIcons() {
   const wrap = document.querySelector('[data-social]');
   if (!wrap) return;
 
-  // Try to get an email from SITE.email or any Email-like social item
-  const getEmailFromConfig = () => {
-    if (SITE?.email) return SITE.email.trim();
-    if (!Array.isArray(SITE?.social)) return "";
-    for (const s of SITE.social) {
-      const url = s.url || "";
-      const label = (s.label || "").toLowerCase();
-      const looksEmail = label.includes("email") || label.includes("mail") || url.startsWith("mailto:") || url.includes("mail.google.com/mail/?view=cm");
-      if (!looksEmail) continue;
-      if (url.startsWith("mailto:")) return url.slice(7);
-      try {
-        const u = new URL(url, location.origin);
-        const to = u.searchParams.get("to");
-        if (to) return decodeURIComponent(to);
-      } catch {}
-    }
-    return "";
-  };
-
-  const emailAddr = getEmailFromConfig();
-
-  // Build non-email links (GitHub, LinkedIn, etc.), skip duplicate Email items if SITE.email is set
+  // Non-email social links (GitHub, LinkedIn, etc.)
   const others = (Array.isArray(SITE?.social) ? SITE.social : []).filter(s => {
-    const label = (s.label || "").toLowerCase();
-    const isEmailLike = label.includes("email") || label.includes("mail") || (s.url || "").startsWith("mailto:");
-    return !(emailAddr && isEmailLike);
+    const lbl = (s.label || "").toLowerCase();
+    const isEmailLike = lbl.includes("email") || lbl.includes("mail") || (s.url || "").startsWith("mailto:");
+    return !isEmailLike; // strip any email-like item
   });
 
   const linksHTML = others.map(s => {
-    const sameTab = (s.url || '').startsWith('mailto:'); // keep mailto inline if present
+    const sameTab = (s.url || '').startsWith('mailto:');
     return `<a class="icon-btn" href="${s.url}" ${sameTab ? '' : 'target="_blank" rel="noopener"'} aria-label="${s.label}">${iconFor(s.label)}</a>`;
   }).join('');
 
-  // Email copy button + popup (only if we have an address)
+  // Always render email as a COPY button (if we have an address)
+  const emailAddr = (SITE?.email || "").trim();
   const emailHTML = emailAddr
     ? `<span class="icon-wrap">
          <button class="icon-btn" type="button" data-copy-email="${emailAddr}" aria-label="Copy email">${ICONS.email}</button>
@@ -71,6 +51,7 @@ function buildSocialIcons() {
 
   wrap.innerHTML = emailHTML + linksHTML;
 }
+
 
 function setupCopyEmail() {
   const wrap = document.querySelector('[data-social]');
@@ -83,7 +64,7 @@ function setupCopyEmail() {
     const email = btn.getAttribute('data-copy-email');
     if (!email) return;
 
-    // Copy to clipboard (with fallback)
+    // Copy to clipboard with fallback
     try {
       await navigator.clipboard.writeText(email);
     } catch {
@@ -97,7 +78,7 @@ function setupCopyEmail() {
       document.body.removeChild(ta);
     }
 
-    // Show popup next to the button
+    // Show popup
     const wrapEl = btn.closest('.icon-wrap');
     const pop = wrapEl?.querySelector('.copy-pop');
     if (pop) {
@@ -107,7 +88,6 @@ function setupCopyEmail() {
     }
   });
 }
-
 
 
 /* =============================== *
