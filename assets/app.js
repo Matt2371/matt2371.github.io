@@ -25,90 +25,26 @@ function iconFor(label) {
 }
 
 function buildSocialIcons() {
-  const wrap = document.querySelector('[data-social]');
+  const wrap = $('[data-social]');
   if (!wrap) return;
 
-  // Try to get an email from SITE.email or any Email-like social item
-  const getEmailFromConfig = () => {
-    if (SITE?.email) return SITE.email.trim();
-    if (!Array.isArray(SITE?.social)) return "";
+  // Merge SITE.email and SITE.social, dedupe “Email”
+  const items = [];
+  if (SITE?.email) items.push({ label: 'Email', url: `mailto:${SITE.email}` });
+
+  if (Array.isArray(SITE?.social)) {
     for (const s of SITE.social) {
-      const url = s.url || "";
-      const label = (s.label || "").toLowerCase();
-      const looksEmail = label.includes("email") || label.includes("mail") || url.startsWith("mailto:") || url.includes("mail.google.com/mail/?view=cm");
-      if (!looksEmail) continue;
-      if (url.startsWith("mailto:")) return url.slice(7);
-      try {
-        const u = new URL(url, location.origin);
-        const to = u.searchParams.get("to");
-        if (to) return decodeURIComponent(to);
-      } catch {}
+      const isEmailLike = (s.label || '').toLowerCase().includes('email') || (s.label || '').toLowerCase().includes('mail');
+      if (isEmailLike && SITE?.email) continue; // avoid duplicate email icon
+      items.push(s);
     }
-    return "";
-  };
+  }
 
-  const emailAddr = getEmailFromConfig();
-
-  // Build non-email links (GitHub, LinkedIn, etc.), skip duplicate Email items if SITE.email is set
-  const others = (Array.isArray(SITE?.social) ? SITE.social : []).filter(s => {
-    const label = (s.label || "").toLowerCase();
-    const isEmailLike = label.includes("email") || label.includes("mail") || (s.url || "").startsWith("mailto:");
-    return !(emailAddr && isEmailLike);
-  });
-
-  const linksHTML = others.map(s => {
-    const sameTab = (s.url || '').startsWith('mailto:'); // keep mailto inline if present
+  wrap.innerHTML = items.map(s => {
+    const sameTab = (s.url || '').startsWith('mailto:');
     return `<a class="icon-btn" href="${s.url}" ${sameTab ? '' : 'target="_blank" rel="noopener"'} aria-label="${s.label}">${iconFor(s.label)}</a>`;
   }).join('');
-
-  // Email copy button + popup (only if we have an address)
-  const emailHTML = emailAddr
-    ? `<span class="icon-wrap">
-         <button class="icon-btn" type="button" data-copy-email="${emailAddr}" aria-label="Copy email">${ICONS.email}</button>
-         <span class="copy-pop" role="status" aria-live="polite" hidden>Email address copied!</span>
-       </span>`
-    : '';
-
-  wrap.innerHTML = emailHTML + linksHTML;
 }
-
-function setupCopyEmail() {
-  const wrap = document.querySelector('[data-social]');
-  if (!wrap) return;
-
-  wrap.addEventListener('click', async (e) => {
-    const btn = e.target.closest('button[data-copy-email]');
-    if (!btn) return;
-
-    const email = btn.getAttribute('data-copy-email');
-    if (!email) return;
-
-    // Copy to clipboard (with fallback)
-    try {
-      await navigator.clipboard.writeText(email);
-    } catch {
-      const ta = document.createElement('textarea');
-      ta.value = email;
-      ta.style.position = 'fixed';
-      ta.style.left = '-9999px';
-      document.body.appendChild(ta);
-      ta.select();
-      document.execCommand('copy');
-      document.body.removeChild(ta);
-    }
-
-    // Show popup next to the button
-    const wrapEl = btn.closest('.icon-wrap');
-    const pop = wrapEl?.querySelector('.copy-pop');
-    if (pop) {
-      pop.hidden = false;
-      pop.classList.add('show');
-      setTimeout(() => { pop.classList.remove('show'); pop.hidden = true; }, 1400);
-    }
-  });
-}
-
-
 
 /* =============================== *
  * Hero setup (banner & headshot)  *
@@ -252,7 +188,6 @@ function boot() {
     .forEach(el => el.textContent = SITE?.role || '');
 
   buildSocialIcons();
-  setupCopyEmail();
   setupHero();
   setupLightbox();
   setupReveal();
