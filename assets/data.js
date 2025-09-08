@@ -1,5 +1,6 @@
 // assets/data.js
 // ========================
+// Prefilled for Matthew Chen (UC Davis). Update at will.
 
 export const SITE = {
   name: "Matthew Chen",
@@ -8,7 +9,7 @@ export const SITE = {
   email: "mattc2371@gmail.com", // optional — add your email if you'd like an email icon
   social: [
     { label: "GitHub", url: "https://github.com/Matt2371" },
-    { label: "LinkedIn", url: "https://linkedin.com" } // replace with your profile or remove
+    { label: "LinkedIn", url: "https://www.linkedin.com/in/chenmatthew37/" } // replace with your profile or remove
   ],
   banner: "/assets/images/banner.jpg",   // replace with your banner image
   headshot: "/assets/images/headshot.jpg" // replace with your headshot
@@ -42,7 +43,7 @@ export const PROJECTS = {
 
 // 📝 Notes entries — titles link to downloadable PDFs in /files
 export const NOTES = {
-  overview: `I find it helpful to organize my knowledge in the form of notes, which I occasionally revisit to review or to update with new knowledge. Please feel free to reference them too, or message me with any feedback you might have!`,
+  overview: `I find it helpful to organize my knowledge in the form of notes, which I occasionally revisit to review or to update with new content. Please feel free to reference them too, or message me with any feedback you might have!`,
   items: [
     { title: "Reinforcement Learning", pdf: "/files/Reinforcement_Learning.pdf", image: "/assets/images/notes-1.jpg", summary: "Comprehensive introduction to reinforcement learning, from Q-learning to policy gradients, to learning from human feedback and additional topics." },
     { title: "Machine Learning", pdf: "/files/Machine_Learning_Notes.pdf", image: "/assets/images/notes-1.jpg", summary: "Overview of supervised and unsupervised ML methods, plus an introduction to deep learning and sequence modeling with Transformers." },

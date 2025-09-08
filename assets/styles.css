@@ -33,7 +33,13 @@ body {
 .nav a { color: var(--text); text-decoration: none; opacity: 0.9; }
 .nav a:hover { opacity: 1; }
 .brand { font-weight: 700; letter-spacing: 0.2px; }
+.nav-left { display: flex; align-items: center; gap: 10px; }
+.nav-icons { display: flex; gap: 8px; }
 .nav-links { display: flex; gap: 18px; align-items: center; }
+
+.icon-btn { width: 36px; height: 36px; border-radius: 999px; display: inline-flex; align-items: center; justify-content: center; color: var(--text); background: var(--card); border: 1px solid transparent; text-decoration: none; }
+.icon-btn:hover { filter: brightness(1.05); }
+.icon-btn svg { display: block; }
 
 /* Hero */
 .hero { position: relative; height: 56vh; min-height: 360px; display: grid; place-items: center; text-align: center; overflow: hidden; border-bottom-left-radius: 24px; border-bottom-right-radius: 24px; }
@@ -44,19 +50,16 @@ body {
 .hero h1 { margin: 0; font-size: clamp(28px, 6vw, 44px); }
 .hero p { margin: 0; color: var(--muted); max-width: 780px; }
 .actions { display: flex; gap: 12px; flex-wrap: wrap; justify-content: center; margin-top: 6px; }
-.icons { display: flex; gap: 10px; justify-content: center; margin-top: 6px; }
-.icon-btn { width: 40px; height: 40px; border-radius: 999px; display: inline-flex; align-items: center; justify-content: center; color: var(--text); background: var(--card); border: 1px solid transparent; text-decoration: none; }
-.icon-btn:hover { filter: brightness(1.05); }
 
 /* Sections & cards */
 .section { padding: 48px 0; }
 .card { background: var(--card); backdrop-filter: blur(var(--blur)); border-radius: var(--radius); padding: 18px; box-shadow: 0 10px 30px rgba(0,0,0,0.15); overflow: hidden; animation: floatIn 700ms ease both; }
 @media (min-width: 720px) { .card { padding: 22px; } }
 
-/* List layout (one entry per row, image above text) */
+/* ✅ Strict list layout (no grid, no columns) */
 .list { display: flex; flex-direction: column; gap: 18px; }
 .item { display: block; }
-.item img.thumb { width: 100%; aspect-ratio: 16/9; height: auto; object-fit: cover; border-radius: 14px; margin-bottom: 10px; }
+.item img.thumb { width: 100%; height: auto; aspect-ratio: 16 / 9; object-fit: cover; border-radius: 14px; margin-bottom: 10px; }
 .item h3 { margin: 0 0 6px; font-size: 20px; }
 .item p { margin: 0; color: var(--muted); }
 .item a.title { color: var(--brand); text-decoration: none; }
