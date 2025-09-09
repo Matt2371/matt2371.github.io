@@ -25,7 +25,14 @@
         </nav>
 
         <!-- Mobile toggle button -->
-        <button class="nav-toggle" aria-label="Menu" aria-expanded="false" aria-controls="mobileMenu">☰</button>
+        <!-- <button class="nav-toggle" aria-label="Menu" aria-expanded="false" aria-controls="mobileMenu">☰</button> -->
+        <button class="nav-toggle" type="button" aria-label="Menu" aria-expanded="false" aria-controls="mobileMenu">
+        <svg width="26" height="26" viewBox="0 0 24 24" aria-hidden="true" fill="currentColor">
+            <rect x="3" y="6"  width="18" height="2" rx="1" />
+            <rect x="3" y="11" width="18" height="2" rx="1" />
+            <rect x="3" y="16" width="18" height="2" rx="1" />
+        </svg>
+        </button>       
 
         <!-- Mobile dropdown -->
         <div id="mobileMenu" class="mobile-menu">
@@ -42,8 +49,8 @@
         <img class="headshot js-lightbox" src="/assets/images/headshot.jpg" alt="Headshot of Matthew Chen" />
         <h1>Hi, I'm Matthew Chen!</h1>
         <div class="actions">
-          <a class="btn" href="/research.html">See my research →</a>
-          <a class="btn" href="/files/Chen_resume.pdf" download>Download my CV/Resume →</a>
+          <a class="btn" href="/research.html">See publications →</a>
+          <a class="btn" href="/files/Chen_resume.pdf" download>Download CV/Resume →</a>
         </div>
       </div>
     </section>
@@ -52,22 +59,18 @@
       <section class="section">
         <article class="card reveal">
           <h2>About me</h2>
-          <p class="muted">Nice to meet you! I am currently a PhD Student at UC Davis as a NSF Graduate Research Fellow. I'm passionate about providing data-driven solutions to complex but meaningful problems.
-            In particular, my research interests lie broadly at the intersection between data science and water resources engineering. For example, I answer questions such as
-            "How can we improve deep learning models that capture human decision making in water systems?" and "Can we use reinforcement learning to discover new water management strategies that adapt to a changing climate?"
+          <p class="muted">Nice to meet you! I'm a PhD student and an NSF Graduate Research Fellow at UC Davis. I'm passionate about providing data-driven solutions to complex but meaningful problems.
+            In particular, my research lies at the intersection between data science and water resources engineering. For example, I answer questions like
+            "How can deep learning better capture human decision-making in water systems?" and "Can reinforcement learning reveal new water management strategies for a changing climate?"
           </p>
 
-          <p class="muted">I also have industry experience as an analytical data scientist at Genentech, where I applied my statistical modeling and data analysis skills
-            to support high profile clinical trials for respiratory diseases. I hold a M.S. in Statistics (which supports my interest in data science) and a B.S. in Civil Engineering (where I developed my interest in water resources), both from UC Davis.
-            In my free time, I enjoy making music and finding awesome new restaurants. I love connecting with new people - feel free to reach out!
+          <p class="muted">Beyond academia, I worked as an analytical data scientist at Genentech, where I applied my statistical modeling and data analysis skills
+            to support high-profile clinical trials for respiratory diseases. I also hold an M.S. in Statistics and a B.S. in Civil Engineering, both from UC Davis.
+            In my free time, I enjoy making music and finding awesome new restaurants. I love meeting new people - feel free to reach out!
           </p>
         </article>
       </section>
     </main>
-
-    <footer class="footer">
-        <div class="container">Built with GitHub Pages</div>
-    </footer>
 
     <div id="lightbox" class="lightbox-backdrop"><img id="lightboxImg" class="lightbox-img" alt="preview" /></div>
 

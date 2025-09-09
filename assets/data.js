@@ -21,7 +21,7 @@ export const RESEARCH = {
   overview: `Please check out my published research and feel free to reach out if you have any questions!`,
   items: [
     {
-      title: "Detection time for nonstationary reservoir system performance driven by climate and land use change",
+      title: "Chen, M. and Herman, J. Detection time for nonstationary reservoir system performance driven by climate and land use change. ASCE Journal of Water Resources Planning and Management, 150 (4). 2024.",
       image: "/assets/images/research-1.jpg", // replace
       url: "https://ascelibrary.org/doi/abs/10.1061/JWRMD5.WRENG-6184",
       summary: `Detect changes in water supply and flood performance outside the envelope of natural variability, and attribute the timing of these detections to uncertain drivers. 
@@ -41,17 +41,17 @@ export const PROJECTS = {
       summary: `Implementation of a Physics-Informed Neural Network (PINN) for the Navier-Stokes equations in PyTorch, trained and validated on DNS data (Raissi et al., 2019) for flow past a cylinder at Re=100.`
     },
     {
-      title: "Causal Inference and Proposition99",
+      title: "Synthetic Control and Proposition 99",
       image: "/assets/images/project-2.png", // replace
       url: "https://github.com/Matt2371/Proposition99",
-      summary: `Demonstration of the synthetic control method using data from California's Proposition 99 (tobacco control) from Abadie et al. (2010).`
+      summary: `Demonstration of the synthetic control method in causal inference using data from California's Proposition 99 (tobacco control) from Abadie et al. (2010).`
     }
   ]
 };
 
 // 📝 Notes entries — titles link to downloadable PDFs in /files
 export const NOTES = {
-  overview: `I find it helpful to organize my knowledge in the form of formal notes, which I occasionally revisit to review or to update with new content. Please feel free to reference them too, or message me with any feedback you might have!`,
+  overview: `I've written notes in LaTeX on a variety of topics, which I occasionally revisit to review or to add new content. Please feel free to reference them too, or message me with any feedback you might have!`,
   items: [
     { title: "Reinforcement Learning", pdf: "/files/Reinforcement_Learning.pdf", image: "/assets/images/notes-1.png", summary: "Comprehensive introduction to reinforcement learning, from Q-learning to policy gradients, to learning from human feedback and additional topics." },
     { title: "Machine Learning", pdf: "/files/Machine_Learning_Notes.pdf", image: "/assets/images/notes-2.png", summary: "Overview of supervised and unsupervised ML methods, plus an introduction to deep learning and sequence modeling with Transformers." },

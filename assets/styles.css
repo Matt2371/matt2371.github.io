@@ -17,7 +17,7 @@
 
   /* Entry card thumbnail sizing */
   --thumb-w: 300px;  /* left column width on wider screens */
-  --thumb-h: 200px;  /* thumbnail height (cover-cropped) */
+  --thumb-h: 219px;  /* thumbnail height (cover-cropped) */
 }
 
 /* ---------- Base ---------- */
@@ -88,6 +88,7 @@ body {
   .nav-links { display: none; }
   .nav-toggle { display: inline-flex; align-items: center; justify-content: center; }
   .mobile-menu.show { display: block; }
+  .nav-left { padding-left: calc(12px + env(safe-area-inset-left)); } /*Mobile: give brand some breathing room*/
 }
 
 /* ---------- Hero ---------- */
