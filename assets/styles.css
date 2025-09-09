@@ -16,8 +16,8 @@
   --maxw: 1100px;
 
   /* Entry card thumbnail sizing */
-  --thumb-w: 220px;  /* left column width on wider screens */
-  --thumb-h: 124px;  /* thumbnail height (cover-cropped) */
+  --thumb-w: 300px;  /* left column width on wider screens */
+  --thumb-h: 200px;  /* thumbnail height (cover-cropped) */
 }
 
 /* ---------- Base ---------- */
