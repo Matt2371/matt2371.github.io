@@ -51,12 +51,37 @@ export const PROJECTS = {
 
 // 📝 Notes entries — titles link to downloadable PDFs in /files
 export const NOTES = {
-  overview: `I've written notes in LaTeX on a variety of topics, which I occasionally revisit to review or to add new content. Please feel free to reference them too, or message me with any feedback you might have!`,
+  overview: `I've written notes in LaTeX on a variety of topics, which I occasionally revisit to review or to add new content. Please feel free to reference them, or message me with any feedback you might have!`,
   items: [
-    { title: "Reinforcement Learning", pdf: "/files/Reinforcement_Learning.pdf", image: "/assets/images/notes-1.png", summary: "Comprehensive introduction to reinforcement learning, from Q-learning to policy gradients, to learning from human feedback and additional topics." },
-    { title: "Machine Learning", pdf: "/files/Machine_Learning_Notes.pdf", image: "/assets/images/notes-2.png", summary: "Overview of supervised and unsupervised ML methods, plus an introduction to deep learning and sequence modeling with Transformers." },
-    { title: "Linear Regression", pdf: "/files/Linear_Regression.pdf", image: "/assets/images/notes-3.png", summary: "Review of statistical modeling using linear models." },
-    { title: "Inferential Statistics", pdf: "/files/Inferential_Statistics.pdf", image: "/assets/images/notes-4.png", summary: "Introduction to mathematical statistics including estimation methods, hypothesis testing, and related topics." },
-    { title: "Linear Algebra Review", pdf: "/files/Linear_Algebra_Review.pdf", image: "/assets/images/notes-5.png", summary: "Brief review of eigenvalue decomposition, quadratic forms, projections, and other core linear algebra topics." }
+    { 
+      title: "Reinforcement Learning", 
+      pdf: "/files/Reinforcement_Learning.pdf", 
+      image: "/assets/images/notes-1.png", 
+      summary: "Comprehensive introduction to reinforcement learning, from Q-learning to policy gradients, to learning from human feedback and additional topics." 
+    },
+    { 
+      title: "Machine Learning", 
+      pdf: "/files/Machine_Learning_Notes.pdf", 
+      image: "/assets/images/notes-2.png", 
+      summary: "Overview of supervised and unsupervised ML methods, plus an introduction to deep learning and sequence modeling with Transformers." 
+    },
+    { 
+      title: "Linear Regression", 
+      pdf: "/files/Linear_Regression.pdf", 
+      image: "/assets/images/notes-3.png", 
+      summary: "Review of statistical modeling using linear models." 
+    },
+    { 
+      title: "Inferential Statistics", 
+      pdf: "/files/Inferential_Statistics.pdf", 
+      image: "/assets/images/notes-4.png", 
+      summary: "Introduction to mathematical statistics including estimation methods, hypothesis testing, and related topics." 
+    },
+    { 
+      title: "Linear Algebra Review", 
+      pdf: "/files/Linear_Algebra_Review.pdf", 
+      image: "/assets/images/notes-5.png", 
+      summary: "Brief review of eigenvalue decomposition, quadratic forms, projections, and other core linear algebra topics." 
+    }
   ]
 };
