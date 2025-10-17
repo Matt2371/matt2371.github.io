@@ -130,7 +130,7 @@ function route() {
   const page = document.body.dataset.page;
   if (page === 'research') {
     const overview = $('[data-overview]');
-    if (overview) overview.textContent = RESEARCH?.overview || '';
+    if (overview) overview.innerHTML = RESEARCH?.overview || '';
     renderList('[data-list]', RESEARCH, 'research');
   }
   if (page === 'projects') {

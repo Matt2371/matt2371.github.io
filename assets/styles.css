@@ -135,6 +135,16 @@ body {
 }
 @media (min-width: 720px) { .card { padding: 22px; } }
 
+.section .card p a {
+  color: var(--brand);
+}
+.section .card p a:hover,
+.section .card p a:focus-visible {
+  text-decoration: underline;
+}
+.section .card p a:visited {
+  color: var(--brand); /* avoid default purple */
+}
 /* ---------- Entries: list + card content layout ---------- */
 /* One card per row */
 .list { display: flex; flex-direction: column; gap: 18px; }
@@ -153,6 +163,7 @@ body {
 .item h3 { margin: 0 0 6px; font-size: 18px; }
 .item p  { margin: 0; color: var(--muted); font-size: 15px; }
 .item a.title { color: var(--brand); text-decoration: none; }
+.item a.title .rest {font-weight: 500; } /* normal or lighter than default */
 .item a.title:hover { text-decoration: underline; }
 
 /* ---------- Footer ---------- */

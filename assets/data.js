@@ -18,10 +18,11 @@ export const SITE = {
 
 // 🧪 Research projects
 export const RESEARCH = {
-  overview: `Please check out my published research and feel free to reach out if you have any questions!`,
+  overview: `Please check out my published research and feel free to reach out if you need access or have any questions. <a href="https://scholar.google.com/citations?user=O_e6X_UAAAAJ&hl=en"
+     target="_blank" rel="noopener">Google Scholar</a>.`,
   items: [
     {
-      title: "Chen, M. and Herman, J. Detection time for nonstationary reservoir system performance driven by climate and land use change. ASCE Journal of Water Resources Planning and Management, 150 (4). 2024.",
+      title: "<strong>Chen, M.</strong><span class='rest'> and Herman, J. Detection time for nonstationary reservoir system performance driven by climate and land use change. ASCE Journal of Water Resources Planning and Management, 150 (4). 2024.</span>",
       image: "/assets/images/research-1.jpg", // replace
       url: "https://ascelibrary.org/doi/abs/10.1061/JWRMD5.WRENG-6184",
       summary: `Detect changes in water supply and flood performance outside the envelope of natural variability, and attribute the timing of these detections to uncertain drivers. 
@@ -32,7 +33,7 @@ export const RESEARCH = {
 
 // 🧰 Side Projects
 export const PROJECTS = {
-  overview: `I included some of my side projects here, exploring different applications of data science that I found interesting!`,
+  overview: `I included some of my side projects here, exploring different applications of data science that I found interesting. Respective GitHub repos are linked.`,
   items: [
     {
       title: "Solving the Navier-Stokes Equations using Neural Networks",
@@ -51,7 +52,7 @@ export const PROJECTS = {
 
 // 📝 Notes entries — titles link to downloadable PDFs in /files
 export const NOTES = {
-  overview: `I've written notes in LaTeX on a variety of topics, which I occasionally revisit to review or to add new content. Please feel free to reference them, or message me with any feedback you might have!`,
+  overview: `I've written notes in LaTeX on a variety of topics in AI/ML, RL, and statistics, which I occasionally revisit to review or to add new content. Please feel free to reference them or message me with feedback.`,
   items: [
     { 
       title: "Reinforcement Learning", 
