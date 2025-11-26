@@ -18,7 +18,7 @@ export const SITE = {
 
 // 🧪 Research projects
 export const RESEARCH = {
-  overview: `Please check out my published research and feel free to reach out if you need access or have any questions. <a href="https://scholar.google.com/citations?user=O_e6X_UAAAAJ&hl=en"
+  overview: `Please check out my published research! I develop machine learning, reinforcement learning, and optimization methods for water resources decision-making under uncertainty. Feel free to reach out if you need access or have any questions. <a href="https://scholar.google.com/citations?user=O_e6X_UAAAAJ&hl=en"
      target="_blank" rel="noopener">Google Scholar</a>.`,
   items: [
     {
