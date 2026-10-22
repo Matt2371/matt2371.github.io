@@ -18,13 +18,19 @@ export const SITE = {
 
 // 🧪 Research projects
 export const RESEARCH = {
-  overview: `Please check out my published research! I develop machine learning, reinforcement learning, and optimization methods for water resources decision-making under uncertainty. Feel free to reach out if you need access or have any questions. <a href="https://scholar.google.com/citations?user=O_e6X_UAAAAJ&hl=en"
+  overview: `See my published research below! My work focuses on developing machine learning, reinforcement learning, and other data driven methods for water resources decision-making under uncertainty. <a href="https://scholar.google.com/citations?user=O_e6X_UAAAAJ&hl=en"
      target="_blank" rel="noopener">Google Scholar</a>.`,
   items: [
     {
+      title: "<strong>Chen, M.</strong><span class='rest'> and Herman, J. Diagnosing Latent Storage Representations in LSTM Reservoir Release Policies. Water Resources Research, 62 (10). 2026.</span>",
+      image: "/assets/images/research-2.png", // replace
+      url: "https://doi.org/10.1029/2025WR043135",
+      summary: `Investigate whether LSTM models of reservoir releases learn physically meaningful representations of storage in their internal states, leveraging linear probing and the ResOPS US dataset. Test if learned policies and representations generalize in time and space.`
+    },
+    {
       title: "<strong>Chen, M.</strong><span class='rest'> and Herman, J. Detection time for nonstationary reservoir system performance driven by climate and land use change. ASCE Journal of Water Resources Planning and Management, 150 (4). 2024.</span>",
       image: "/assets/images/research-1.jpg", // replace
-      url: "https://ascelibrary.org/doi/abs/10.1061/JWRMD5.WRENG-6184",
+      url: "https://doi.org/10.1061/JWRMD5.WRENG-6184",
       summary: `Detect changes in water supply and flood performance outside the envelope of natural variability, and attribute the timing of these detections to uncertain drivers. 
       Train a logistic regression classifier to predict future detections given recent observations.`
     }
@@ -52,7 +58,7 @@ export const PROJECTS = {
 
 // 📝 Notes entries — titles link to downloadable PDFs in /files
 export const NOTES = {
-  overview: `I've written notes in LaTeX on a variety of topics in AI/ML, RL, and statistics, which I occasionally revisit to review or to add new content. Please feel free to reference them or message me with feedback.`,
+  overview: `I've written notes in LaTeX on a variety of topics in AI/ML, RL, and statistics. Please feel free to reference them!`,
   items: [
     { 
       title: "Reinforcement Learning", 
